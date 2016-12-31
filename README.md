@@ -1,4 +1,4 @@
-# Attendance-Bot
-[![CI Status](https://img.shields.io/travis/ihanken/Suboptimal-Guild/Attendance-Bot.svg?style=flat)](https://travis-ci.org/Suboptimal-Guild/Attendance-Bot)
+# EPGP-Bot
+[![Build Status](https://travis-ci.org/Suboptimal-Guild/Fun-Bot.svg?branch=develop)](https://travis-ci.org/Suboptimal-Guild/Fun-Bot)
 
-A discord bot that includes commands for tracking attendance of raiders.
+A discord bot that includes fun commands, such as jokes and quotes.
