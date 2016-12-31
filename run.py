@@ -4,9 +4,13 @@ import argparse
 import discord
 import asyncio
 
-# Fun imports
-from fun.quote import print_quote
-from fun.response import *
+from commands.commands import get_armory_link as gal
+from commands.commands import get_char_name as gcn
+from commands.commands import get_own_name as gon
+from commands.commands import get_character as getchar
+from commands.commands import showhelp
+from commands.logs import get_logs_page
+from commands.logs import get_logs_links
 
 # Development Constants
 DEV_BOT_NAME = "Harambot-Dev"
