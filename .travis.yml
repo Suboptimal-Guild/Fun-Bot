@@ -1,12 +1,17 @@
 sudo: required
 language: python
 python:
-  - "3.5"
+- '3.5'
 services:
-  - docker
+- docker
 install:
-  - docker pull jfloff/alpine-python:latest-slim
-  - docker build -t fun-bot .
-  - docker run -td fun-bot python3 run.py --dev
+- docker pull jfloff/alpine-python:latest-slim
+- docker build -t fun-bot .
+- docker run -td -e FUN_BOT_DEVELOPMENT_TOKEN -e FUN_BOT_PRODUCTION_TOKEN fun-bot
+  python3 run.py --dev
 script:
-  - docker ps | grep fun-bot
+- docker ps | grep fun-bot
+env:
+  global:
+  - secure: T0FgCehcLAlVRklq0r/KNY3nZDNhspUGUZzkNZuJS/B5SOQ0XTMk8VBILLyBmRw8vZ20dE9TTNOnVZF4iR1xXjm7UTyTRsvlhL9+XIwhcK4PxWzVRpXLaUjBoXY3MOovcljURg2b2LOv+n6k/agdncAAHIoWcgdAvkee8IZppKdMsrMLCfh0ULpdzj9wuFrbLPnTc/5nf+9FYsmYaYxYKxbV3DfjOMURDyDbtScO8ft6BApSCmn7DJhi2ITEYHCT3a/UqHYbsAhero8cBZe2aBtdfsurBjDRMgyxoZ347LVK73E+iJDe3f7Mh+ogA6Ay2tbjcxdTv8TqRsro4G9gn2IXd+w3Cg1K819bRIRUZ4p3SeA0nlfl3/iIqhml8xR4P8WDujmWRWyuPfaYJhL3NtmLTOopaPMhER2HD/Wp+P2WAoFiKAlazT5bry/i/ZJN+T1xnHNmfAPAk9P+JRcmkpREuE3RmOufkSvuf/7MJt3mCHkUurEuwQ7B2DL6n+fAKbpSmRjlXO9X6uqJA1lCh1gNcGp/8lAM2BoBzkRZsFJnOYS3w41mEFmhuL1pKUDadB28uk8/0oWTVjU2lZDkNHgK4upPnSVjPObxNfyIMHAF7D3NNCA7YhF86AJAmExvN5GxzTJp5FyFfItGJLjPws5cCBuL9M0iF18/metvFx8=
+  - secure: f1/ggp1r7C5pdR3wEQEA7HH6w7S8SaAQzkCqNCpC7USFKOlCYqoNmTARTZBOL+GZvWrDaYBW+meoQZBeGbv7oMAELA4316vP4tbNwi2OlOQqlCdnjXX2Idvk2V9dRGC1rTkjbeFI4sVf+5fSi6+UiBVAC6dGfb0nCS7dU3sqfFb/jRbRNaSR+8aJAPAZsxCLuh8+ZRayXj7857kbNPTvMMlkVXcA1FmmfO65UmGDZxV8g1NAYgH90/MveBm94zrdJoT4yqiaLCyLw/Yeytb0OymjW3LHVP+vVVLToZDF0vEHXHckyUQXQLhNySSdumzfeGAchooL3pydPSScwqbWhdhp1YOr6QagDZ2yYoaEVRiqccMXjpN4wmOe/Qapt/yyiUx4auz8HyDRH1K1Y498n0oBe+Dt6Bfxf0rsLgSOZWYSa967OElbYS9sU510Qvb6YhFNnilsGGxGI0uqO+ciNyjDCnMnnvgnWAJ19904yJVpPZTYAurRM2KmEipfdk6negiRgwz8yfaeZYfwB0FyPG3E3IJLbSrubVcZibSNyAGBsbzyBRfuw9ShLVQw81ggUlvi3M1I813+/NG1vVsJvs/Ckr3SEPyND5qI68ZS3BVfJoccjDp3zBHeeyM9Pz034JmN7wZr+aGv8Gn+iWjAgHs4hQQZmqKcS8lEqSvwLPo=

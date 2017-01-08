@@ -1,8 +1,8 @@
 #!/usr/bin/python
 import argparse
-
 import discord
 import asyncio
+import os
 
 # Fun imports
 from fun.quote import print_quote
@@ -10,11 +10,9 @@ from fun.response import *
 
 # Development Constants
 DEV_BOT_NAME = "Harambot-Dev"
-DEV_BOT_KEY = "MjQ5NTkwMTE3MzU2Nzk3OTUz.CxIg5A.BYYtQ1H4H3l4CuLl-YrWjI50eOk"
 
 # Production Constants
 PRODUCTION_BOT_NAME = "Harambot 🍌"
-PRODUCTION_BOT_KEY = "MjQ2MTMxMjkyMjg5MjM2OTky.CxIzbg.ftm3bhYcnsceIm2bgLQDlx7UmOk"
 
 client = discord.Client()
 
@@ -69,8 +67,8 @@ if __name__ == "__main__":
     client.accept_invite('https://discord.gg/mM5fXCe')
 
     if args.dev:
-        client.run(DEV_BOT_KEY)
+        client.run(os.environ['FUN_BOT_DEVELOPMENT_TOKEN'])
     elif args.prod:
-        client.run(PRODUCTION_BOT_KEY)
+        client.run(os.environ['FUN_BOT_PRODUCTION_TOKEN'])
     else:
         print("RIP in peace.")
